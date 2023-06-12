@@ -52,7 +52,7 @@ a {
   align-items: center;
   justify-content: start;
   cursor: pointer;
-  background: transparent;
+  background: transparent !important;
   outline: none;
   border: none;
 
