@@ -1,4 +1,5 @@
-const Videos = () => {
+const Videos = props => {
+  console.log(props.videos);
   return <div>Videos</div>;
 };
 
