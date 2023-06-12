@@ -20,6 +20,12 @@ const Feed = () => (
         💻 2023 k1d12r
       </Typography>
     </Box>
+
+    <Box p={2} sx={{ overflowY: 'auto', flex: 2, height: '90vh' }}>
+      <Typography variant="h4" fontWeight="bold" mb={2} sx={{ color: '#fff' }}>
+        New <span style={{ color: '#f31503' }}>videos</span>
+      </Typography>
+    </Box>
   </Stack>
 );
 
