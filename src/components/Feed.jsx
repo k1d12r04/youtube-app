@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
-import Sidebar from './Sidebar';
+
+import { Sidebar, Videos } from './';
 
 const Feed = () => (
   <Stack sx={{ flexDirection: { sx: 'column', md: 'row' } }}>
@@ -25,6 +26,7 @@ const Feed = () => (
       <Typography variant="h4" fontWeight="bold" mb={2} sx={{ color: '#fff' }}>
         New <span style={{ color: '#f31503' }}>videos</span>
       </Typography>
+      <Videos videos={[]} />
     </Box>
   </Stack>
 );
