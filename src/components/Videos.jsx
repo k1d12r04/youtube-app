@@ -6,7 +6,7 @@ const Videos = ({ videos, direction }) => {
     <Stack
       direction={direction || 'row'}
       flexWrap="wrap"
-      justifyContent="start"
+      justifyContent="center"
       gap={2}
     >
       {!videos?.length && <h3>Loading...</h3>}

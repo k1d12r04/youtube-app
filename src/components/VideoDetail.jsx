@@ -23,13 +23,18 @@ const VideoDetail = () => {
     );
   }, [id]);
 
-  console.log(videoDetail);
-
   return (
     <Box minHeight="95vh">
       <Stack direction={{ xs: 'column', md: 'row' }}>
         <Box flex={1}>
-          <Box sx={{ width: '100%', position: 'sticky', top: '86px' }}>
+          <Box
+            sx={{
+              width: '100%',
+              height: '100%',
+              position: 'sticky',
+              top: '86px',
+            }}
+          >
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${id}`}
               className="react-player"
@@ -47,6 +52,7 @@ const VideoDetail = () => {
             <Stack
               direction="row"
               justifyContent="space-between"
+              textAlign="center"
               sx={{
                 color: '#fff',
               }}
@@ -55,7 +61,7 @@ const VideoDetail = () => {
                 <Typography
                   variant={{ sm: 'subtitle1', md: 'h6' }}
                   color="#fff"
-                  ml="15px"
+                  marginLeft="10px"
                   fontFamily="Helvetica, sans-serif"
                 >
                   {videoDetail?.snippet?.channelTitle}

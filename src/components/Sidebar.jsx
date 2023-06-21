@@ -6,7 +6,7 @@ const Sidebar = props => (
   <Stack
     direction="row"
     sx={{
-      msOverflowY: 'auto',
+      overflowY: 'scroll',
       height: { sx: 'auto', md: '95%' },
       flexDirection: { md: 'column' },
     }}
