@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player/youtube';
 import { Typography, Box, Stack } from '@mui/material';
 import { CheckCircle } from '@mui/icons-material';
 
-import { Videos } from './';
+import { ChannelDetail, Videos } from './';
 import { fetchFromAPI } from '../utils/fetchFromAPI';
 
 const VideoDetail = () => {
@@ -17,6 +17,8 @@ const VideoDetail = () => {
     );
   }, [id]);
 
+  console.log(videoDetail);
+
   return (
     <Box minHeight="95vh">
       <Stack direction={{ xs: 'column', md: 'row' }}>
@@ -27,6 +29,59 @@ const VideoDetail = () => {
               className="react-player"
               controls
             />
+            <Typography
+              color="#fff"
+              variant="h5"
+              fontWeight="bold"
+              fontFamily="Helvetica, sans-serif"
+              p={2}
+            >
+              {videoDetail?.snippet?.title}
+            </Typography>
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              sx={{
+                color: '#fff',
+              }}
+            >
+              <Link to={`/channel/${videoDetail?.snippet?.channelId}`}>
+                <Typography
+                  variant={{ sm: 'subtitle1', md: 'h6' }}
+                  color="#fff"
+                  ml="15px"
+                  fontFamily="Helvetica, sans-serif"
+                >
+                  {videoDetail?.snippet?.channelTitle}
+                  <CheckCircle
+                    sx={{ fontSize: '12px', color: 'gray', ml: '5px' }}
+                  />
+                </Typography>
+              </Link>
+              <Stack direction="row" gap="20px" alignItems="center">
+                <Typography
+                  fontFamily="Helvetica, sans-serif"
+                  variant="body1"
+                  sx={{ opacity: 0.7 }}
+                >
+                  {parseInt(
+                    videoDetail?.statistics?.viewCount
+                  ).toLocaleString()}{' '}
+                  views
+                </Typography>
+                <Typography
+                  fontFamily="Helvetica, sans-serif"
+                  variant="body1"
+                  sx={{ opacity: 0.7 }}
+                  mr="15px"
+                >
+                  {parseInt(
+                    videoDetail?.statistics?.likeCount
+                  ).toLocaleString()}{' '}
+                  likes
+                </Typography>
+              </Stack>
+            </Stack>
           </Box>
         </Box>
       </Stack>
